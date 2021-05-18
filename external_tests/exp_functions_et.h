@@ -16,8 +16,7 @@ using namespace avx2_basics;
 void testBasicExpAVX2Double()
 {
 
-    int const n = 16; //
-    +1;
+    int const n = 16 + 3;
     std::size_t const align = 32;
 
     double *x = avx2_utility::aligned_alloc<double>(n, align);
@@ -43,7 +42,9 @@ void testBasicExpAVX2Double()
     x[13] = pi / 3.0;
     x[14] = 23.5;
     x[15] = 4.0 * pi / 3.0;
-    // x[16] = 10.5;
+    x[16] = 10.5;
+    x[17] = -1.5;
+    x[18] = -10.5;
 
     auto start_asm = std::chrono::system_clock::now();
     bool rc1 = exp_avx2(x, n, res1);
@@ -82,7 +83,7 @@ void testBasicExpAVX2Double()
 void testBasicExpAVX2Float()
 {
 
-    int const n = 16; // + 1;
+    int const n = 16 + 7;
     std::size_t const align = 32;
 
     float *x = avx2_utility::aligned_alloc<float>(n, align);
@@ -108,7 +109,13 @@ void testBasicExpAVX2Float()
     x[13] = pi / 3.0f;
     x[14] = 23.5f;
     x[15] = 4.0f * pi / 3.0f;
-    // x[16] = 10.2f;
+    x[16] = 10.5f;
+    x[17] = -1.5f;
+    x[18] = -10.5f;
+    x[19] = 2.5f;
+    x[20] = pi / 4.0f;
+    x[21] = -5.08f;
+    x[22] = 5.08f;
 
     auto start_asm = std::chrono::system_clock::now();
     bool rc1 = exp_avx2(x, n, res1);

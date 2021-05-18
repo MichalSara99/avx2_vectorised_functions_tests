@@ -16,7 +16,7 @@ using namespace avx2_basics;
 void testBasicLogAVX2Float()
 {
 
-    int const n = 16;
+    int const n = 16 + 7;
     //+1;
     std::size_t const align = 32;
 
@@ -43,7 +43,13 @@ void testBasicLogAVX2Float()
     x[13] = pi / 3.0f;
     x[14] = 23.5f;
     x[15] = 4.0f * pi / 3.0f;
-    // x[16] = 10.2f;
+    x[16] = 10.2f;
+    x[17] = -0.5f;
+    x[18] = 1.5f;
+    x[19] = 10.5f;
+    x[20] = 0.5f;
+    x[21] = 2.5f;
+    x[22] = 2.01f;
 
     auto start_asm = std::chrono::system_clock::now();
     bool rc1 = log_avx2(x, n, res1);
@@ -82,7 +88,7 @@ void testBasicLogAVX2Float()
 void testBasicLogAVX2Double()
 {
 
-    int const n = 16;
+    int const n = 16 + 3;
     // +1;
     std::size_t const align = 32;
 
@@ -93,23 +99,25 @@ void testBasicLogAVX2Double()
     // test some basic known values:
     const double pi = avx2_constants::pi<double>();
 
-    x[0] = 0.2f;
-    x[1] = pi / 2.0f;
+    x[0] = 0.2;
+    x[1] = pi / 2.0;
     x[2] = pi;
-    x[3] = 3.0f * pi / 2.0f;
-    x[4] = 5.0f * pi / 4.0f;
-    x[5] = 2.0f * pi;
-    x[6] = 4.0f * pi;
-    x[7] = 3.0f * pi;
-    x[8] = 6.0f * pi / 3.0f;
-    x[9] = -2.0f * pi;
-    x[10] = -pi / 4.0f;
-    x[11] = 7.0f * pi / 4.0f;
-    x[12] = 0.5f;
-    x[13] = pi / 3.0f;
-    x[14] = 23.5f;
-    x[15] = 4.0f * pi / 3.0f;
-    // x[16] = 10.2;
+    x[3] = 3.0 * pi / 2.0;
+    x[4] = 5.0 * pi / 4.0;
+    x[5] = 2.0 * pi;
+    x[6] = 4.0 * pi;
+    x[7] = 3.0 * pi;
+    x[8] = 6.0 * pi / 3.0;
+    x[9] = -2.0 * pi;
+    x[10] = -pi / 4.0;
+    x[11] = 7.0 * pi / 4.0;
+    x[12] = 0.5;
+    x[13] = pi / 3.0;
+    x[14] = 23.5;
+    x[15] = 4.0 * pi / 3.0;
+    x[16] = 10.2;
+    x[17] = -0.5;
+    x[18] = 1.5;
 
     auto start_asm = std::chrono::system_clock::now();
     bool rc1 = log_avx2(x, n, res1);

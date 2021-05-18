@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="external_tests">
+      <UniqueIdentifier>{593ce205-1bdd-4ae6-9601-552b9e0fa738}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external_src">
+      <UniqueIdentifier>{5314afb4-e66b-4eea-8c78-609c52b9c615}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="macros">
+      <UniqueIdentifier>{09316add-2b88-4930-91bc-cfacf498d76b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="external_src\main.cpp">
+      <Filter>external_src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="external_tests\exp_functions_et.h">
+      <Filter>external_tests</Filter>
+    </ClInclude>
+    <ClInclude Include="external_tests\log_functions_et.h">
+      <Filter>external_tests</Filter>
+    </ClInclude>
+    <ClInclude Include="external_tests\trig_functions_et.h">
+      <Filter>external_tests</Filter>
+    </ClInclude>
+    <ClInclude Include="macros\avx2_macros.h">
+      <Filter>macros</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

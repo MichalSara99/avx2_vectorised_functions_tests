@@ -1,7 +1,7 @@
 ﻿  main.cpp
   Generating code
-  2 of 23 functions ( 8.7%) were compiled, the rest were copied from previous compilation.
+  5 of 26 functions (19.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    4 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   avx2_vectorised_functions.vcxproj -> D:\my_c_files\avx2_vectorised_functions\avx2_vectorised_functions\Release\avx2_vectorised_functions.exe

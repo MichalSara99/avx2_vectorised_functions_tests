@@ -26,6 +26,8 @@ int main(int argc, char const *argv[])
     // testBasicCoshAVX2Float();
     // testBasicSinhAVX2Double();
     // testBasicSinhAVX2Float();
+    // testBasicTanhAVX2Double();
+    // testBasicTanhAVX2Float();
 
     // ==================================================
 

@@ -32,5 +32,8 @@
     <ClInclude Include="external_tests\hyp_functions_et.h">
       <Filter>external_tests</Filter>
     </ClInclude>
+    <ClInclude Include="external_tests\special_functions_et.h">
+      <Filter>external_tests</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

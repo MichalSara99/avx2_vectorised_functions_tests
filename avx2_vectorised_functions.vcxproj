@@ -25,6 +25,7 @@
     <ClInclude Include="external_tests\exp_functions_et.h" />
     <ClInclude Include="external_tests\hyp_functions_et.h" />
     <ClInclude Include="external_tests\log_functions_et.h" />
+    <ClInclude Include="external_tests\special_functions_et.h" />
     <ClInclude Include="external_tests\trig_functions_et.h" />
     <ClInclude Include="macros\avx2_macros.h" />
   </ItemGroup>

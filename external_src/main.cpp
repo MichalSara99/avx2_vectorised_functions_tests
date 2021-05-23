@@ -2,14 +2,13 @@
 #include <string>
 
 // EXTERNAL TESTS
-//#include "external_tests/avx_trig_functions_et.h"
 //#include "external_tests/basic_functions_et.h"
 //#include "external_tests/basic_operations_et.h"
 #include "external_tests/exp_functions_et.h"
 #include "external_tests/hyp_functions_et.h"
 #include "external_tests/log_functions_et.h"
 //#include "external_tests/normal_dist_functions_et.h"
-//#include "external_tests/special_functions_et.h"
+#include "external_tests/special_functions_et.h"
 #include "external_tests/trig_functions_et.h"
 
 int main(int argc, char const *argv[])
@@ -64,6 +63,16 @@ int main(int argc, char const *argv[])
 
     // testBasicLogAVX2Float();
     // testBasicLogAVX2Double();
+
+    // ==================================================
+
+    // ==================================================
+    // ============ special_functions_et.h ==============
+
+    // testBasicErfAVX2Float();
+    // testBasicErfAVX2Double();
+    // testBasicErfcAVX2Float();
+    // testBasicErfcAVX2Double();
 
     // ==================================================
 

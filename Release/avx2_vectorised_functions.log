@@ -1,7 +1,3 @@
 ﻿  main.cpp
-  Generating code
-  2 of 25 functions ( 8.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  avx2_vectorised_functions.vcxproj -> D:\my_c_files\avx2_vectorised_functions\avx2_vectorised_functions\Release\avx2_vectorised_functions.exe
+D:\my_c_files\avx2_vectorised_functions\avx2_vectorised_functions\external_tests\special_functions_et.h(406,25): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+LINK : fatal error LNK1104: cannot open file 'D:\my_c_files\avx2_vectorised_functions\avx2_vectorised_functions\Release\avx2_vectorised_functions.exe'

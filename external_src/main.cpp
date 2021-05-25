@@ -75,6 +75,8 @@ int main(int argc, char const *argv[])
     // testBasicErfAVX2Double();
     // testBasicErfcAVX2Float();
     // testBasicErfcAVX2Double();
+    testBasicExpintAVX2Float();
+    testBasicExpintAVX2Double();
 
     // ==================================================
 

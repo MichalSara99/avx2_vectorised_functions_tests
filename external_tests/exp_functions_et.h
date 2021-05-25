@@ -151,6 +151,144 @@ void testBasicExpAVX2Float()
     avx2_utility::aligned_free(res2);
 }
 
+void testBasicPow2nAVX2Double()
+{
+    int const n = 16 + 3;
+    std::size_t const align = 32;
+
+    long long *x = avx2_utility::aligned_alloc<long long>(n, align);
+    double *res1 = avx2_utility::aligned_alloc<double>(n, align);
+    double *res2 = avx2_utility::aligned_alloc<double>(n, align);
+
+    // test some basic known values:
+    const double pi = avx2_constants::pi<double>();
+
+    x[0] = -10;
+    x[1] = -9;
+    x[2] = -8;
+    x[3] = -7;
+    x[4] = -6;
+    x[5] = -5;
+    x[6] = -4;
+    x[7] = -3;
+    x[8] = -2;
+    x[9] = -1;
+    x[10] = 0;
+    x[11] = 2;
+    x[12] = 3;
+    x[13] = 4;
+    x[14] = 5;
+    x[15] = 6;
+    x[16] = 10;
+    x[17] = 7;
+    x[18] = 8;
+
+    auto start_asm = std::chrono::system_clock::now();
+    bool rc1 = pow2n_avx2(x, n, res1);
+    auto end_asm = std::chrono::system_clock::now();
+    auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
+
+    auto start_cpp = std::chrono::system_clock::now();
+    for (int i = 0; i < n; ++i)
+    {
+        res2[i] = exp2(x[i]);
+    }
+    auto end_cpp = std::chrono::system_clock::now();
+    auto elapsed_cpp = std::chrono::duration<double>(end_cpp - start_cpp).count();
+
+    AVX2_ASSERT(rc1 == 1, "Failure in packed 2^n SSE occured");
+
+    std::cout << "		C++				Assembly "
+                 "(SSE)			Difference\n";
+    std::cout << "=========================================================\n\n";
+    for (int i = 0; i < n; ++i)
+    {
+        std::cout << i << " | " << res2[i];
+        std::cout << " | " << res1[i];
+        std::cout << " | " << (res1[i] - res2[i]) << "\n";
+    }
+    std::cout << "=========================================================\n\n";
+    std::cout << "\n"
+              << "Elapsed (C++): " << elapsed_cpp;
+    std::cout << "\n"
+              << "Elapsed (Assembly): " << elapsed_asm << "\n";
+
+    avx2_utility::aligned_free(x);
+    avx2_utility::aligned_free(res1);
+    avx2_utility::aligned_free(res2);
+}
+
+void testBasicPow2nAVX2Float()
+{
+    int const n = 16 + 7;
+    std::size_t const align = 32;
+
+    int *x = avx2_utility::aligned_alloc<int>(n, align);
+    float *res1 = avx2_utility::aligned_alloc<float>(n, align);
+    float *res2 = avx2_utility::aligned_alloc<float>(n, align);
+
+    // test some basic known values:
+    const float pi = avx2_constants::pi<float>();
+
+    x[0] = -10;
+    x[1] = -9;
+    x[2] = -8;
+    x[3] = -7;
+    x[4] = -6;
+    x[5] = -5;
+    x[6] = -4;
+    x[7] = -3;
+    x[8] = -2;
+    x[9] = -1;
+    x[10] = 0;
+    x[11] = 2;
+    x[12] = 3;
+    x[13] = 4;
+    x[14] = 5;
+    x[15] = 6;
+    x[16] = 10;
+    x[17] = 7;
+    x[18] = 8;
+    x[19] = 2;
+    x[20] = 11;
+    x[21] = 12;
+    x[22] = -11;
+
+    auto start_asm = std::chrono::system_clock::now();
+    bool rc1 = pow2n_avx2(x, n, res1);
+    auto end_asm = std::chrono::system_clock::now();
+    auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
+
+    auto start_cpp = std::chrono::system_clock::now();
+    for (int i = 0; i < n; ++i)
+    {
+        res2[i] = exp2(x[i]);
+    }
+    auto end_cpp = std::chrono::system_clock::now();
+    auto elapsed_cpp = std::chrono::duration<double>(end_cpp - start_cpp).count();
+
+    AVX2_ASSERT(rc1 == 1, "Failure in packed 2^n SSE occured");
+
+    std::cout << "		C++				Assembly "
+                 "(SSE)			Difference\n";
+    std::cout << "=========================================================\n\n";
+    for (int i = 0; i < n; ++i)
+    {
+        std::cout << i << " | " << res2[i];
+        std::cout << " | " << res1[i];
+        std::cout << " | " << (res1[i] - res2[i]) << "\n";
+    }
+    std::cout << "=========================================================\n\n";
+    std::cout << "\n"
+              << "Elapsed (C++): " << elapsed_cpp;
+    std::cout << "\n"
+              << "Elapsed (Assembly): " << elapsed_asm << "\n";
+
+    avx2_utility::aligned_free(x);
+    avx2_utility::aligned_free(res1);
+    avx2_utility::aligned_free(res2);
+}
+
 void testBasicExpmAVX2Double()
 {
     int const n = 16 + 3;

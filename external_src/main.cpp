@@ -55,6 +55,8 @@ int main(int argc, char const *argv[])
 
     // testBasicExpAVX2Double();
     // testBasicExpAVX2Float();
+    // testBasicPow2nAVX2Double();
+    // testBasicPow2nAVX2Float();
     // testBasicExpmAVX2Double();
     // testBasicExpmAVX2Float();
 
@@ -75,8 +77,8 @@ int main(int argc, char const *argv[])
     // testBasicErfAVX2Double();
     // testBasicErfcAVX2Float();
     // testBasicErfcAVX2Double();
-    testBasicExpintAVX2Float();
-    testBasicExpintAVX2Double();
+    // testBasicExpintAVX2Float();
+    // testBasicExpintAVX2Double();
 
     // ==================================================
 

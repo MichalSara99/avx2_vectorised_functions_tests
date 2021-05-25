@@ -55,6 +55,8 @@ int main(int argc, char const *argv[])
 
     // testBasicExpAVX2Double();
     // testBasicExpAVX2Float();
+    // testBasicExpmAVX2Double();
+    // testBasicExpmAVX2Float();
 
     // ==================================================
 

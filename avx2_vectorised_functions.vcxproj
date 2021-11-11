@@ -22,6 +22,8 @@
     <ClCompile Include="external_src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="external_tests\basic_functions_et.h" />
+    <ClInclude Include="external_tests\basic_operations_et.h" />
     <ClInclude Include="external_tests\exp_functions_et.h" />
     <ClInclude Include="external_tests\hyp_functions_et.h" />
     <ClInclude Include="external_tests\log_functions_et.h" />

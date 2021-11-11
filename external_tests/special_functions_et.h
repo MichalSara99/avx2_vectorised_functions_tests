@@ -403,7 +403,7 @@ void testBasicExpintAVX2Float()
     auto start_cpp = std::chrono::system_clock::now();
     for (int i = 0; i < n; ++i)
     {
-        res2[i] = -1.0f * std::expint(-1.0f * x[i]);
+        res2[i] = -1.0f * std::expint(-1.0 * x[i]);
     }
     auto end_cpp = std::chrono::system_clock::now();
     auto elapsed_cpp = std::chrono::duration<double>(end_cpp - start_cpp).count();

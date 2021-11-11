@@ -2,7 +2,7 @@
 D:\my_c_files\avx2_vectorised_functions\avx2_vectorised_functions\external_tests\exp_functions_et.h(265,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 D:\my_c_files\avx2_vectorised_functions\avx2_vectorised_functions\external_tests\special_functions_et.h(406,25): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   Generating code
-  2 of 24 functions ( 8.3%) were compiled, the rest were copied from previous compilation.
+  5 of 47 functions (10.6%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

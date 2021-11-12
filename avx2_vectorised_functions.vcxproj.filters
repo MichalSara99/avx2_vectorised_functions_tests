@@ -10,6 +10,9 @@
     <Filter Include="macros">
       <UniqueIdentifier>{09316add-2b88-4930-91bc-cfacf498d76b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="semd">
+      <UniqueIdentifier>{7b8d7cf8-aa3b-449f-9963-82f91717c810}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="external_src\main.cpp">
@@ -39,6 +42,15 @@
       <Filter>external_tests</Filter>
     </ClInclude>
     <ClInclude Include="external_tests\basic_functions_et.h">
+      <Filter>external_tests</Filter>
+    </ClInclude>
+    <ClInclude Include="semd\semd.h">
+      <Filter>semd</Filter>
+    </ClInclude>
+    <ClInclude Include="semd\semd_functions.h">
+      <Filter>semd</Filter>
+    </ClInclude>
+    <ClInclude Include="external_tests\semd_et.h">
       <Filter>external_tests</Filter>
     </ClInclude>
   </ItemGroup>

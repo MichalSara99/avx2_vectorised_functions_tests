@@ -34,7 +34,7 @@ void testBasicAbsAVX2Double()
     }
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = abs_avx2(x, n, res1);
+    bool rc1 = abs_avx2(x, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -88,7 +88,7 @@ void testBasicAbsAVX2Float()
     }
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = abs_avx2(x, n, res1);
+    bool rc1 = abs_avx2(x, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -141,7 +141,7 @@ void testBasicSqrtAVX2Double()
     }
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = sqrt_avx2(x, n, res1);
+    bool rc1 = sqrt_avx2(x, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -195,7 +195,7 @@ void testBasicSqrtAVX2Float()
     }
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = sqrt_avx2(x, n, res1);
+    bool rc1 = sqrt_avx2(x, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -249,7 +249,7 @@ void testBasicSqrpAVX2Double()
     }
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = sqrp_avx2(x, n, res1);
+    bool rc1 = sqrp_avx2(x, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -303,7 +303,7 @@ void testBasicSqrpAVX2Float()
     }
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = sqrp_avx2(x, n, res1);
+    bool rc1 = sqrp_avx2(x, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -359,7 +359,7 @@ void testBasicMinAVX2Double()
     }
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = min_avx2(x, y, n, res1);
+    bool rc1 = min_avx2(x, y, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -416,7 +416,7 @@ void testBasicMinAVX2Float()
     }
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = min_avx2(x, y, n, res1);
+    bool rc1 = min_avx2(x, y, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -472,7 +472,7 @@ void testBasicMinBroadAVX2Double()
     }
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = min_avx2(y, x, n, res1);
+    bool rc1 = min_avx2(y, x, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -527,7 +527,7 @@ void testBasicMinBroadAVX2Float()
     }
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = min_avx2(y, x, n, res1);
+    bool rc1 = min_avx2(y, x, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -583,7 +583,7 @@ void testBasicMaxAVX2Double()
     }
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = max_avx2(x, y, n, res1);
+    bool rc1 = max_avx2(x, y, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -640,7 +640,7 @@ void testBasicMaxAVX2Float()
     }
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = max_avx2(x, y, n, res1);
+    bool rc1 = max_avx2(x, y, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -696,7 +696,7 @@ void testBasicMaxBroadAVX2Double()
     }
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = max_avx2(x, y, n, res1);
+    bool rc1 = max_avx2(x, y, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -751,7 +751,7 @@ void testBasicMaxBroadAVX2Float()
     }
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = max_avx2(x, y, n, res1);
+    bool rc1 = max_avx2(x, y, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 

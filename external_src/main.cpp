@@ -8,8 +8,14 @@
 #include "external_tests/hyp_functions_et.h"
 #include "external_tests/log_functions_et.h"
 //#include "external_tests/normal_dist_functions_et.h"
+#include "external_tests/semd_et.h"
 #include "external_tests/special_functions_et.h"
 #include "external_tests/trig_functions_et.h"
+
+bool __vectorcall my_abs(double x)
+{
+    return std::abs(x);
+}
 
 int main(int argc, char const *argv[])
 {
@@ -19,112 +25,116 @@ int main(int argc, char const *argv[])
     /// ==========================================================
 
     // ===================================================
+    // =================== semd_et.h =====================
+    // testAbs();
+
+    // ===================================================
     // ============= basic_operations_et.h ===============
 
-    // testBasicAddAVX2Double();                // -- checked
-    // testBasicAddAVX2Float();                 // -- checked
-    // testBasicAddBroadAVX2Double();           // -- checked
-    // testBasicAddBroadAVX2Float();            // -- checked
-    // testBasicSubAVX2Double();                // -- checked
-    // testBasicSubAVX2Float();                 // -- checked
-    // testBasicSubBroad1AVX2Double();          // -- checked
-    // testBasicSubBroad1AVX2Float();           // -- checked
-    // testBasicSubBroad2AVX2Double();          // -- checked
-    // testBasicSubBroad2AVX2Float();           // -- checked
-    // testBasicMulAVX2Double();                // -- checked
-    // testBasicMulAVX2Float();                 // -- checked
-    // testBasicMulBroadAVX2Double();           // -- checked
-    // testBasicMulBroadAVX2Float();            // -- checked
-    // testBasicDivAVX2Double();       // -- checked
-    // testBasicDivAVX2Float();        // -- checked
-    // testBasicDivBroad1AVX2Double(); // -- checked
-    // testBasicDivBroad1AVX2Float();  // -- checked
-    // testBasicDivBroad2AVX2Double(); // -- checked
-    // testBasicDivBroad2AVX2Float();  // -- checked
-    // testBasicInvAVX2Double(); // -- checked
-    // testBasicInvAVX2Float();  // -- checked
-    // testBasicNegAVX2Double(); // -- checked
-    // testBasicNegAVX2Float();  // -- checked
+    // testBasicAddAVX2Double();     // -- checked __vect
+    // testBasicAddAVX2Float();      // -- checked __vect
+    // testBasicAddBroadAVX2Double(); // -- checked __vect
+    // testBasicAddBroadAVX2Float();  // -- checked __vect
+    // testBasicSubAVX2Double(); // -- checked __vect
+    // testBasicSubAVX2Float();  // -- checked __vect
+    // testBasicSubBroad1AVX2Double(); // -- checked __vect
+    // testBasicSubBroad1AVX2Float();  // -- checked __vect
+    // testBasicSubBroad2AVX2Double(); // -- checked __vect
+    // testBasicSubBroad2AVX2Float();  // -- checked __vect
+    // testBasicMulAVX2Double();      // -- checked __vect
+    // testBasicMulAVX2Float();       // -- checked __vect
+    // testBasicMulBroadAVX2Double(); // -- checked __vect
+    // testBasicMulBroadAVX2Float();  // -- checked __vect
+    // testBasicDivAVX2Double();       // -- checked __vect
+    // testBasicDivAVX2Float();        // -- checked __vect
+    // testBasicDivBroad1AVX2Double(); // -- checked __vect
+    // testBasicDivBroad1AVX2Float();  // -- checked __vect
+    // testBasicDivBroad2AVX2Double(); // -- checked __vect
+    // testBasicDivBroad2AVX2Float();  // -- checked __vect
+    // testBasicInvAVX2Double(); // -- checked __vect
+    // testBasicInvAVX2Float();  // -- checked __vect
+    // testBasicNegAVX2Double(); // -- checked __vect
+    // testBasicNegAVX2Float();  // -- checked __vect
 
     // ===================================================
     // ============== basic_functions_et.h ===============
 
-    // testBasicAbsAVX2Double();  // -- checked
-    // testBasicAbsAVX2Float();   // -- checked
-    // testBasicSqrtAVX2Double(); // -- checked
-    // testBasicSqrtAVX2Float();  // -- checked
-    // testBasicSqrpAVX2Double(); // -- checked
-    // testBasicSqrpAVX2Float();  // -- checked
-    // testBasicMinAVX2Double(); // -- checked
-    // testBasicMinAVX2Float();  // -- checked
-    // testBasicMinBroadAVX2Double(); // -- checked
-    // testBasicMinBroadAVX2Float();  // -- checked
-    // testBasicMaxAVX2Double(); // -- checked
-    // testBasicMaxAVX2Float();  // -- checked
-    // testBasicMaxBroadAVX2Double(); // -- checked
-    // testBasicMaxBroadAVX2Float();  // -- checked
+    // testBasicAbsAVX2Double(); // -- checked __vect
+    // testBasicAbsAVX2Float();  // -- checked __vect
+    // testBasicSqrtAVX2Double(); // -- checked __vect
+    // testBasicSqrtAVX2Float();  // -- checked __vect
+    // testBasicSqrpAVX2Double(); // -- checked __vect
+    // testBasicSqrpAVX2Float();  // -- checked __vect
+    // testBasicMinAVX2Double(); // -- checked __vect
+    // testBasicMinAVX2Float();  // -- checked __vect
+    // testBasicMinBroadAVX2Double(); // -- checked __vect
+    // testBasicMinBroadAVX2Float();  // -- checked __vect
+    // testBasicMaxAVX2Double(); // -- checked __vect
+    // testBasicMaxAVX2Float();  // -- checked __vect
+    // testBasicMaxBroadAVX2Double(); // -- checked __vect
+    // testBasicMaxBroadAVX2Float();  // -- checked __vect
 
     // ===================================================
     // ================ hyp_functions_et.h ===============
 
-    // testBasicCoshAVX2Double();   // -- checked
-    // testBasicCoshAVX2Float();    // -- checked
-    // testBasicSinhAVX2Double();   // -- checked
-    // testBasicSinhAVX2Float();    // -- checked
-    // testBasicTanhAVX2Double();   // -- checked
-    // testBasicTanhAVX2Float();    // -- checked
+    // testBasicCoshAVX2Double(); // -- checked __vect
+    // testBasicCoshAVX2Float();  // -- checked __vect
+    //  testBasicSinhAVX2Double(); // -- checked __vect
+    //  testBasicSinhAVX2Float();  // -- checked __vect
+    //  testBasicTanhAVX2Double(); // -- checked __vect
+    //  testBasicTanhAVX2Float();  // -- checked __vect
 
     // ==================================================
 
     // ===================================================
     // ================ trig_functions_et.h ===============
 
-    // testBasicSinAVX2Double();    //-- checked
-    // testBasicSinAVX2Float();     //-- checked
-    // testBasicCosAVX2Double();    //-- checked
-    // testBasicCosAVX2Float();     //-- checked
-    // testBasicTanAVX2Float();     //-- checked
-    // testBasicTanAVX2Double();    //-- checked
-    // testBasicCotAVX2Float();     //-- checked
-    // testBasicCotAVX2Double();    //-- checked
-    // testBasicAsinAVX2Double();   //-- checked
-    // testBasicAsinAVX2Float();    //-- checked
-    // testBasicAcosAVX2Double();   //-- checked
-    // testBasicAcosAVX2Float();    //-- checked
-    // testBasicAtanAVX2Double();   //-- checked
-    // testBasicAtanAVX2Float();    //-- checked
+    // testBasicSinAVX2Double(); //-- checked __vect
+    // testBasicSinAVX2Float();  //-- checked __vect
+    // testBasicCosAVX2Double(); //-- checked __vect
+    // testBasicCosAVX2Float();  //-- checked __vect
+    // testBasicTanAVX2Float();  //-- checked __vect
+    // testBasicTanAVX2Double(); //-- checked __vect
+    // testBasicCotAVX2Float();  //-- checked __vect
+    // testBasicCotAVX2Double(); //-- checked __vect
+    // testBasicAsinAVX2Double(); //-- checked __vect
+    // testBasicAsinAVX2Float();  //-- checked __vect
+    // testBasicAcosAVX2Double(); //-- checked __vect
+    // testBasicAcosAVX2Float();  //-- checked __vect
+    // testBasicAtanAVX2Double(); //-- checked __vect
+    // testBasicAtanAVX2Float();  //-- checked __vect
 
     // ==================================================
 
     // ==================================================
     // ================ exp_functions_et.h ===============
 
-    // testBasicExpAVX2Double();    // -- checked
-    // testBasicExpAVX2Float();     // -- checked
-    // testBasicPow2nAVX2Double();  // -- checked
-    // testBasicPow2nAVX2Float();   // -- checked
-    // testBasicExpmAVX2Double();   // -- checked
-    // testBasicExpmAVX2Float();    // -- checked
+    // testBasicExpAVX2Double(); // -- checked __vect
+    // testBasicExpAVX2Float();  // -- checked __vect
+    // testBasicPow2nAVX2Double(); // -- checked __vect
+    // testBasicPow2nAVX2Float();  // -- checked __vect
+    // testBasicExpmAVX2Double(); // -- checked __vect
+    // testBasicExpmAVX2Float();  // -- checked __vect
 
     // ==================================================
 
     // ==================================================
     // ================ log_functions_et.h ===============
 
-    // testBasicLogAVX2Float();     // -- checked
-    // testBasicLogAVX2Double();    // -- checked (make nan mask for negatives)
+    // testBasicLogAVX2Float();  // -- checked __vect
+    // testBasicLogAVX2Double(); // -- checked __vect (make nan mask for negatives)
 
     // ==================================================
 
     // ==================================================
     // ============ special_functions_et.h ==============
 
-    // testBasicErfAVX2Float();     // -- checked
-    // testBasicErfAVX2Double();    // -- checked
-    // testBasicErfcAVX2Float();    // -- checked
-    // testBasicErfcAVX2Double();   // -- checked
-    // testBasicExpintAVX2Float();  //-- checked
-    // testBasicExpintAVX2Double(); //-- checked
+    // testBasicErfAVX2Float();   // -- checked __vect
+    // testBasicErfAVX2Double();  // -- checked __vect
+    // testBasicErfcAVX2Float();  // -- checked __vect
+    // testBasicErfcAVX2Double(); // -- checked __vect
+    // testBasicExpintAVX2Float();  //-- checked __vect
+    // testBasicExpintAVX2Double(); //-- checked __vect
 
     // ==================================================
 

@@ -52,7 +52,7 @@ void testBasicLogAVX2Float()
     x[22] = 2.01f;
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = log_avx2(x, n, res1);
+    bool rc1 = log_avx2(x, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -120,7 +120,7 @@ void testBasicLogAVX2Double()
     x[18] = 1.5;
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = log_avx2(x, n, res1);
+    bool rc1 = log_avx2(x, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 

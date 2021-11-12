@@ -48,7 +48,7 @@ void testBasicErfAVX2Double()
     x[19] = 1.79;
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = erf_avx2(x, n, res1);
+    bool rc1 = erf_avx2(x, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -119,7 +119,7 @@ void testBasicErfAVX2Float()
     x[22] = 10.1f;
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = erf_avx2(x, n, res1);
+    bool rc1 = erf_avx2(x, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -187,7 +187,7 @@ void testBasicErfcAVX2Double()
     x[19] = 1.79;
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = erfc_avx2(x, n, res1);
+    bool rc1 = erfc_avx2(x, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -258,7 +258,7 @@ void testBasicErfcAVX2Float()
     x[22] = 10.1f;
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = erfc_avx2(x, n, res1);
+    bool rc1 = erfc_avx2(x, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -325,7 +325,7 @@ void testBasicExpintAVX2Double()
     x[19] = 1.79;
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = expint_avx2(x, n, res1);
+    bool rc1 = expint_avx2(x, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
@@ -396,7 +396,7 @@ void testBasicExpintAVX2Float()
     x[22] = 10.1f;
 
     auto start_asm = std::chrono::system_clock::now();
-    bool rc1 = expint_avx2(x, n, res1);
+    bool rc1 = expint_avx2(x, res1, n);
     auto end_asm = std::chrono::system_clock::now();
     auto elapsed_asm = std::chrono::duration<double>(end_asm - start_asm).count();
 
